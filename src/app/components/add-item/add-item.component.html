@@ -1,0 +1,44 @@
+ <div style="padding:20px; padding-top:100px;">
+ <mat-card class="example-card" >
+  <mat-card-header >
+    
+    <mat-card-title><h2>Add Reminder</h2></mat-card-title>
+    
+  </mat-card-header>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()">
+    	<div class="row">
+    	<div class="col-md-3">
+    	<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="item.title" name="title">
+  </mat-form-field>
+  </div>
+  </div>
+   <div class="col-md-3 offset-md-1">
+	<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="item.date" name="date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>    	
+
+  </div>
+  <div class="col-md-3 offset-md-1">
+    	<div class="example-container">
+  <mat-form-field>
+    <textarea matInput placeholder="Description" [(ngModel)]="item.description " name="description"></textarea>
+  </mat-form-field>
+  </div>
+  </div>
+
+
+
+
+</div>
+<hr>
+<button  type="submit" value="submit" mat-raised-button color="primary">Add Reminder</button>
+    </form>
+  </mat-card-content>
+ 
+</mat-card>
+</div>

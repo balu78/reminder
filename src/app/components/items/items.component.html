@@ -1,0 +1,35 @@
+<div *ngIf="items?.length > 0 ; else noItems">
+<div class="row ">
+<div *ngFor="let item of items" style="padding:10px;" class="col-md-4">
+
+
+<mat-card class="example-card " >
+  <mat-card-header >
+    
+    <mat-card-title><h2>{{item.title}}</h2></mat-card-title>
+    
+  </mat-card-header>
+  <hr>
+  <mat-card-content>
+    <h4>
+      {{item.description}}
+    </h4>
+  </mat-card-content>
+  <hr>
+  <mat-card-actions>
+    {{item.date}}
+
+    <div class="pull-right" style="padding:10px;" >
+    	<button  mat-raised-button color="warn"
+       (click)="deleteItem($event,item)" >Delete</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+</div>
+</div>
+</div>
+<ng-template #noItems>
+<h2>There are no Remainders</h2>
+</ng-template>
+
+
